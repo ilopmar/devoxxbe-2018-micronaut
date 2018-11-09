@@ -13,6 +13,6 @@ class EncryptControllerSpec extends Specification {
 
     void 'test encrypt controller'() {
         expect:
-            encryptClient.encrypt("Hello Devoxx").getText() == 'xxoveD olleH'
+            encryptClient.encrypt("Hello Devoxx").blockingGet().getText() == 'xxoveD olleH'
     }
 }
