@@ -33,6 +33,8 @@ dependencies {
     compile "io.micronaut:micronaut-validation"
     compile "io.micronaut:micronaut-runtime"
     compile "io.micronaut:micronaut-discovery-client"
+    compileOnly "com.oracle.substratevm:svm:1.0.0-rc8"
+    runtime "io.micronaut:micronaut-graal"
     compileOnly "io.micronaut:micronaut-inject-java"
     runtime "ch.qos.logback:logback-classic:1.2.3"
     testCompile "io.micronaut.test:micronaut-test-spock:1.0.0.RC2"
