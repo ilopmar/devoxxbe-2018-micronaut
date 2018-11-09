@@ -7,9 +7,14 @@ import io.reactivex.Single;
 @Controller("/")
 public class EncryptController {
 
+    private final EncryptionService encryptionService;
+
+    public EncryptController(EncryptionService encryptionService) {
+        this.encryptionService = encryptionService;
+    }
+
     @Get("/encrypt/{text}")
     public Single<Message> encrypt(String text) {
-        String encrypted = new StringBuilder(text).reverse().toString();
-        return Single.just(new Message(encrypted));
+        return encryptionService.encrypt(text);
     }
 }
